@@ -1,0 +1,36 @@
+@import "../App.scss";
+
+header{
+    padding: 3rem;
+}
+header h2{
+    color:$primaryColor;
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-family: 'Prosto One',
+            cursive;
+    margin-top: 1rem;
+    margin-bottom: 1.7rem;
+    width: 85%;
+}
+header p {
+    color: $kingGray;
+    font-weight: 500;
+    font-size: 0.99rem;
+    width: 70%;
+}
+header .btn{
+    background-color: $primaryColor;
+    padding: 0.5rem 2.2rem;
+    border: none;
+    border-radius: 0;
+    font-size: 1.1rem;
+    margin-top: 1.7rem;
+    --bs-btn-focus-shadow-rgb: none;
+}
+header .btn:hover{
+    background-color: $primaryColor;
+}
+header .btn:focus {
+    background-color: $primaryColor!important;
+}

@@ -1,0 +1,29 @@
+ 
+// colors
+ 
+ $primaryColor: #3b1b36;
+ $bgcolor: #fcf6f1;
+ $kingsColor: #51724e;
+ $headingLines: #30334f;
+ $kingGray: #8b8e9f;
+
+ // fonts 
+
+ /*
+
+ font-family: 'Poppins',
+ sans-serif;
+ font-family: 'Prosto One',
+ cursive;
+ font-family: 'Roboto',
+ sans-serif;
+
+ */
+
+ // mains 
+
+ body{
+   background-color: $bgcolor!important;
+   font-family: 'Poppins',
+         sans-serif;
+ }
