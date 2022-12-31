@@ -1,6 +1,8 @@
 - FOOD API:🍔
   https://github.com/igdev116/free-food-menus-api
 
+- we will replace food api with food data api i will create it
+
 - GET GOOGLE FONTS [*]
 - DETECT THE DESIGN COLOR [*]
   primary colors{
@@ -16,6 +18,7 @@
 * start with the navbar [*]
 * then go to the header [*]
 * then go to the meals box
+* create SUBSCRIBE section on the home page []
 * then go to menu page and design the sidebar
 * then the main menu part with the welcome heading after that the sort navigation list
 * then create the menu or the meals box

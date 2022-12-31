@@ -1,1 +1,47 @@
 @import "../App.scss";
+section.meals-box .meal-card{
+    width: 80%;
+    margin: 0 auto;
+}
+section.meals-box .meal-card .card-bottom{
+    margin-left: 0.3rem;
+    position: relative;
+}
+section.meals-box .meal-card .card-bottom h4{
+    color:$headingLines;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0;
+}
+section.meals-box .meal-card .card-bottom p{
+    color:$kingGray;
+    font-size: 0.99rem;
+    width: 70%;
+    margin-bottom: 0.5rem!important;
+}
+section.meals-box .meal-card .card-bottom .card-footer{
+    display: flex;
+    position: relative;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+}
+section.meals-box .meal-card .card-bottom .card-footer span:first-child{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: $headingLines;
+}
+section.meals-box .meal-card .card-bottom span.add {
+    width: 30px;
+    height: 30px;
+    background-color: $headingLines;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0;
+    position: absolute;
+    right: 0px;
+    top: -4%;
+    cursor: pointer;
+}

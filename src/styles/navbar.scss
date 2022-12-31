@@ -26,3 +26,6 @@ nav .btn{
     
 }
 nav .btn:hover{background-color:$primaryColor}
+nav .btn:focus {
+    background-color: $primaryColor !important;
+}
