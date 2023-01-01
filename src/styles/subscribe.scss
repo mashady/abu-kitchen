@@ -1,0 +1,39 @@
+@import "../App.scss";
+.subscribe{
+    background-color: $primaryColor;
+    margin-top:0.5rem;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+.subscribe span{color: #FFF;opacity: 0.5;}
+.subscribe h4
+{
+    color: #FFF;
+    margin-top: 0.7rem;
+    margin-bottom: 2.5rem;
+    font-weight: bold;
+    font-size: 2rem;
+    width: 35%;}
+.email-box {
+    display: flex;
+    width: 500px;
+}
+.email-box input{
+    padding: 0.6rem 1.3rem;
+    margin-right: 0.6rem;
+}
+input:focus{
+    
+}
+.email-box button{
+    padding: 0 2.5rem;
+    font-size: 1.2rem;
+    border: none;
+    background-color: $kingsColor;
+}
+.email-box button:hover {
+    background-color: $kingsColor;
+}
+.email-box button:focus {
+    background-color: $kingsColor!important;
+}

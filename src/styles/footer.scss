@@ -1,0 +1,15 @@
+@import "../App.scss";
+section.footer{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+section.footer span{
+    color: $headingLines;
+    font-size: 1.2rem;
+}
+section.footer a{
+    color: $headingLines;
+    text-decoration: none;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}

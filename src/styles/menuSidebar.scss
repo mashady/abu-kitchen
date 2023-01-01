@@ -1,0 +1,19 @@
+@import "../App.scss";
+.sidebar{
+    width: 200px;
+    background-color: $headingLines;
+    color: #FFF;
+    position: fixed;
+    height: 100%;
+    padding: 2rem 1.2rem;
+}
+.sidebar .user-span{}
+.sidebar .list-group-item{
+    color:#FFF!important;
+    background-color: $headingLines;
+    border: none!important;
+    margin-bottom: 0.5rem;
+cursor: pointer;
+}
+.sidebar .list-group-item:hover{background-color: $kingsColor !important;}
+.active{background-color: $kingsColor!important;}

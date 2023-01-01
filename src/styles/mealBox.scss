@@ -1,4 +1,8 @@
 @import "../App.scss";
+section.meals-box{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
 section.meals-box .meal-card{
     width: 80%;
     margin: 0 auto;
@@ -44,4 +48,7 @@ section.meals-box .meal-card .card-bottom span.add {
     right: 0px;
     top: -4%;
     cursor: pointer;
+}
+section.meals-box .meal-card .card-bottom span.add:hover{
+    opacity:0.9;
 }

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { headerCover } from "../assets/images";
 import "../styles/header.scss";
 export default class header extends Component {
@@ -12,7 +13,10 @@ export default class header extends Component {
               These healthy recipes shake up your comfort food favorites by
               adding more veggies and swapping out cooking methods
             </p>
-            <button className="btn btn-primary">Order now</button>
+
+            <Link to="/menu">
+              <button className="btn btn-primary">Order now</button>
+            </Link>
           </div>
           <div className="col-md-6 text-center">
             <img

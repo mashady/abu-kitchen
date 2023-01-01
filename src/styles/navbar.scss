@@ -25,6 +25,7 @@ nav .btn{
     font-size: 1.1rem;
     
 }
+nav .btn a{color:#FFF!important;text-decoration: none;}
 nav .btn:hover{background-color:$primaryColor}
 nav .btn:focus {
     background-color: $primaryColor !important;

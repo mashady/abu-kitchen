@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "./components/header";
 import MealBox from "./components/mealBox";
 import { getItems, getFeaturesItems } from "./api/menuData";
+import Subscribe from "./components/subscribe";
 export default class home extends Component {
   state = {
     allItems: [],
@@ -16,17 +17,11 @@ export default class home extends Component {
   render() {
     const totalItems = this.state.allItems;
     const totalFeature = this.state.allFeaturesItems;
-    console.log(totalFeature);
     return (
       <React.Fragment>
-        <div>
-          hey abu
-          {totalFeature.map((total) => (
-            <div>{total.title}</div>
-          ))}
-        </div>
         <Header />
-        <MealBox />
+        <MealBox featuresItems={totalFeature} />
+        <Subscribe />
       </React.Fragment>
     );
   }

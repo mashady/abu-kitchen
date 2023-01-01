@@ -28,6 +28,10 @@ header .btn{
     margin-top: 1.7rem;
     --bs-btn-focus-shadow-rgb: none;
 }
+header .btn a{
+    color: #FFF!important;
+    text-decoration: none;
+}
 header .btn:hover{
     background-color: $primaryColor;
 }
