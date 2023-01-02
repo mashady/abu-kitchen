@@ -21,9 +21,12 @@
 .email-box input{
     padding: 0.6rem 1.3rem;
     margin-right: 0.6rem;
+    outline: none!important;
+    outline-offset: none;
 }
-input:focus{
-    
+.email-box input:focus{
+    outline: none!important;
+    outline-offset: none;
 }
 .email-box button{
     padding: 0 2.5rem;

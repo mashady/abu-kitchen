@@ -1,0 +1,62 @@
+@import "../App.scss";
+.login-page{
+        width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+}
+form h1{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+    /*
+    display: flex;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;*/
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.form-signin input[type="email"]:focus{
+    border-color: #ced4da;
+    box-shadow: none;
+    outline: 0 none;
+}
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.form-signin input[type="password"]:focus {
+    border-color: #ced4da;
+    box-shadow: none;
+    outline: 0 none;
+}
+.login-page button{
+    background-color: $primaryColor;
+    border-color:$primaryColor;
+}
+.login-page button:hover {
+    background-color: $primaryColor;
+    border-color: $primaryColor;
+}
+.login-page button:focus {
+    background-color: $primaryColor!important;
+    border-color: $primaryColor!important;
+}

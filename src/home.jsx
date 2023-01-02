@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Navbar from "./components/navbar";
 import Header from "./components/header";
 import MealBox from "./components/mealBox";
 import { getItems, getFeaturesItems } from "./api/menuData";
@@ -19,6 +20,7 @@ export default class home extends Component {
     const totalFeature = this.state.allFeaturesItems;
     return (
       <React.Fragment>
+        <Navbar />
         <Header />
         <MealBox featuresItems={totalFeature} />
         <Subscribe />

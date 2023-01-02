@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import _ from "lodash";
-
+import "../styles/pagination.scss";
 const Pagination = ({ itemsCount, pageSize, currentPage, onPageChange }) => {
   const pagesCount = Math.ceil(itemsCount / pageSize);
   if (pagesCount === 1) return null;
@@ -11,9 +11,8 @@ const Pagination = ({ itemsCount, pageSize, currentPage, onPageChange }) => {
     <nav
       className=""
       style={{
-        position: "fixed",
-        bottom: "0",
-        left: "50%",
+        display: "flex",
+        justifyContent: "center",
       }}
     >
       <ul className="pagination">

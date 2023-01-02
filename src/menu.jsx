@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./styles/menu.scss";
+import Navbar from "./components/navbar";
 import Pagination from "./components/pagination";
+import MenuMealBox from "./components/menuMealBox";
 import { paginate } from "./utils/paginate";
 import { getItems, getFeaturesItems } from "./api/menuData";
 import { getGenres } from "./api/genresData";
@@ -13,7 +15,7 @@ export default class menu extends Component {
     currentPage: 1,
     pageSize: 6,
     searchQuery: "",
-    selectedGenre: null,
+    selectedGenre: [{ name: "all items" }],
   };
   async componentDidMount() {
     const items = await getItems();
@@ -61,13 +63,17 @@ export default class menu extends Component {
     const { pageSize, currentPage, sortColumn, searchQuery } = this.state;
 
     const { totalCount, data: allItems } = this.getPagedData();
-    console.log(allItems);
+    //console.log(allItems);
+    const genreSelctor = this.state.selectedGenre["name"];
+    console.log(genreSelctor);
+    console.log(genreSelctor);
 
     const allTheFuckenGenres = this.state.allGenres;
     //console.log(allTheFuckenGenres);
 
     return (
       <React.Fragment>
+        <Navbar />
         <div className="">
           <div className="main">
             <div className="container">
@@ -93,11 +99,17 @@ export default class menu extends Component {
                       icon={faSort}
                     />
                   </h3>
+                  <MenuMealBox featuresItems={allItems} />
                 </div>
               </div>
             </div>
           </div>
-          <Pagination />
+          <Pagination
+            itemsCount={totalCount}
+            pageSize={pageSize}
+            currentPage={currentPage}
+            onPageChange={this.handlePageChange}
+          />
         </div>
       </React.Fragment>
     );

@@ -1,0 +1,11 @@
+@import "../App.scss";
+ul.pagination li a {
+    color: $primaryColor !important;
+    font-size: 1.2rem;
+}
+
+ul.pagination li.active .page-link {
+    background-color: $primaryColor !important;
+    color: #FFF !important;
+    border-color: $primaryColor !important;
+}

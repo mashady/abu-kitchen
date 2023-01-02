@@ -11,21 +11,23 @@ import Header from "./components/header";
 import MealBox from "./components/mealBox";
 import Footer from "./components/footer";
 import NotFound from "./components/not-found";
+import Login from "./components/login";
+import Registrar from "./components/registrar";
 function App() {
   return (
     <div className="App">
-      <Navbar />
       <React.Fragment>
         <Switch>
           <Route path="/home" component={Home} />
           <Route path="/menu" component={Menu} />
           <Route path="/about-us" component={AboutUs} />
+          <Route path="/login" component={Login} />
+          <Route path="/registrar" component={Registrar} />
           <Route path="/not-found" component={NotFound} />
           <Redirect from="/" exact to="/home" />
           <Redirect to="/not-found" />
         </Switch>
       </React.Fragment>
-      <Footer />
     </div>
   );
 }
