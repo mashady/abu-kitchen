@@ -5,7 +5,8 @@ import Pagination from "./components/pagination";
 import MenuMealBox from "./components/menuMealBox";
 import { paginate } from "./utils/paginate";
 import { getItems, getFeaturesItems } from "./api/menuData";
-import { getGenres } from "./api/genresData";
+//import { getGenres } from "./api/genresData";
+import { getGenres } from "./services/genreService";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSort } from "@fortawesome/free-solid-svg-icons";
 export default class menu extends Component {
@@ -20,7 +21,9 @@ export default class menu extends Component {
   async componentDidMount() {
     const items = await getItems();
     const data = await getGenres();
-    const genres = [{ _id: "", icon: "🍴", name: "all" }, ...data];
+    const theinsider = data["data"];
+    console.log(theinsider["0"]);
+    const genres = [{ _id: "", icon: "🍴", name: "all" }, ...theinsider];
     this.setState({ allItems: items, allGenres: genres });
   }
   handlePageChange = (page) => {
@@ -69,7 +72,7 @@ export default class menu extends Component {
     console.log(genreSelctor);
 
     const allTheFuckenGenres = this.state.allGenres;
-    //console.log(allTheFuckenGenres);
+    console.log(allTheFuckenGenres);
 
     return (
       <React.Fragment>

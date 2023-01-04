@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 import Header from "./components/header";
 import MealBox from "./components/mealBox";
 import { getItems, getFeaturesItems } from "./api/menuData";
@@ -24,6 +25,7 @@ export default class home extends Component {
         <Header />
         <MealBox featuresItems={totalFeature} />
         <Subscribe />
+        <Footer />
       </React.Fragment>
     );
   }
