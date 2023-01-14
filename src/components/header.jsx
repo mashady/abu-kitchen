@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { headerCover } from "../assets/images";
+import { ffc } from "../assets/images";
 import "../styles/header.scss";
 export default class header extends Component {
   render() {

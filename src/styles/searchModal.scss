@@ -1,0 +1,15 @@
+@import "../App.scss";
+.search-box-container{
+    position: relative;
+}
+.search-box-container input{
+    padding: 0.3rem;
+    height: 40px;
+    width: 245px;
+    border: 1px solid #dddddd9c;            border-radius: 6px;
+    font-size: 0.95rem;
+    margin-right: 0.5rem;
+}
+.search-box-container input[name="search"]:focus{
+    border-color: #dddddd9c!important;
+}

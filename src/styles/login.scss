@@ -28,33 +28,33 @@ form h1{
     z-index: 2;
 }
 
-.form-signin input[type="email"] {
+.form-signin input[name="username"] {
     margin-bottom: -1px;
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
 }
-.form-signin input[type="email"]:focus{
-    border-color: #ced4da;
+.form-signin input[name="username"]:focus{
+    border-color: #ced4da!important;
     box-shadow: none;
     outline: 0 none;
 }
-.form-signin input[type="password"] {
+.form-signin input[name="password"] {
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
-.form-signin input[type="password"]:focus {
-    border-color: #ced4da;
+.form-signin input[name="password"]:focus {
+    border-color: #ced4da!important;
     box-shadow: none;
     outline: 0 none;
 }
 .login-page button{
-    background-color: $primaryColor;
-    border-color:$primaryColor;
+    background-color: $primaryColor!important;
+    border-color:$primaryColor!important;
 }
 .login-page button:hover {
-    background-color: $primaryColor;
-    border-color: $primaryColor;
+    background-color: $primaryColor!important;
+    border-color: $primaryColor!important;
 }
 .login-page button:focus {
     background-color: $primaryColor!important;

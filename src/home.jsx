@@ -21,7 +21,6 @@ export default class home extends Component {
     const totalFeature = this.state.allFeaturesItems;
     return (
       <React.Fragment>
-        <Navbar />
         <Header />
         <MealBox featuresItems={totalFeature} />
         <Subscribe />

@@ -3,12 +3,14 @@ import "./styles/menu.scss";
 import Navbar from "./components/navbar";
 import Pagination from "./components/pagination";
 import MenuMealBox from "./components/menuMealBox";
+import SearchModal from "./components/searchModal";
 import { paginate } from "./utils/paginate";
 import { getItems, getFeaturesItems } from "./api/menuData";
 //import { getGenres } from "./api/genresData";
 import { getGenres } from "./services/genreService";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSort } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 export default class menu extends Component {
   state = {
     allItems: [],
@@ -51,7 +53,7 @@ export default class menu extends Component {
     let filtered = allFuckItems;
     if (searchQuery) {
       filtered = allFuckItems.filter((i) =>
-        m.title.toLowerCase().startsWith(searchQuery.toLowerCase())
+        i.title.toLowerCase().startsWith(searchQuery.toLowerCase())
       );
     } else if (selectedGenre && selectedGenre._id) {
       filtered = allFuckItems.filter((i) => i.genre._id === selectedGenre._id);
@@ -66,17 +68,18 @@ export default class menu extends Component {
     const { pageSize, currentPage, sortColumn, searchQuery } = this.state;
 
     const { totalCount, data: allItems } = this.getPagedData();
+    console.log(allItems);
+
     //console.log(allItems);
-    const genreSelctor = this.state.selectedGenre["name"];
-    console.log(genreSelctor);
-    console.log(genreSelctor);
+    //const genreSelctor = this.state.selectedGenre["name"];
+    //console.log(genreSelctor);
+    //console.log(genreSelctor);
 
     const allTheFuckenGenres = this.state.allGenres;
     console.log(allTheFuckenGenres);
 
     return (
       <React.Fragment>
-        <Navbar />
         <div className="">
           <div className="main">
             <div className="container">
@@ -95,14 +98,45 @@ export default class menu extends Component {
                   ))}
                 </div>
                 <div className="meals-container">
-                  <h3>
-                    All Items
-                    <FontAwesomeIcon
-                      style={{ marginLeft: "1rem" }}
-                      icon={faSort}
-                    />
-                  </h3>
-                  <MenuMealBox featuresItems={allItems} />
+                  <div className="meals-box-head">
+                    <h3>
+                      All Items
+                      <FontAwesomeIcon
+                        style={{ marginLeft: "1rem" }}
+                        icon={faSort}
+                      />
+                    </h3>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <SearchModal
+                        value={searchQuery}
+                        onChange={this.handleSearch}
+                      />
+                      <Link to="/meals/new">
+                        <button className="btn btn-primary">New Meal</button>
+                      </Link>
+                    </div>
+                  </div>
+                  <section
+                    style={{
+                      marginLeft: "10rem",
+                      marginRight: "10rem",
+                    }}
+                    className="meals-box"
+                  >
+                    <div className="container">
+                      <div className="row">
+                        {allItems.map((item) => (
+                          <MenuMealBox meal={item} />
+                        ))}
+                      </div>
+                    </div>
+                  </section>
                 </div>
               </div>
             </div>

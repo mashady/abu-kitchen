@@ -1,35 +1,56 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
+import Joi from "joi-browser";
 import "../styles/login.scss";
-export default class login extends Component {
+import Form from "../components/common/form";
+import auth from "../services/authService";
+
+export default class login extends Form {
+  state = {
+    data: { username: "", password: "" },
+    errors: { err: "" },
+  };
+
+  schema = {
+    username: Joi.string().required().label("Username"),
+    password: Joi.string().required().label("Password"),
+  };
+
+  doSubmit = async () => {
+    //console.log(response.status);
+    try {
+      const { username, password } = this.state.data;
+      await auth.login(username, password);
+      const { state } = this.props.location;
+      window.location = state ? state.from.pathname : "/";
+    } catch (error) {
+      if (error.response && error.response.status === 400) {
+        const errors = { ...this.state.errors };
+        errors.username = error.response.data;
+        this.setState({ errors });
+      }
+    }
+  };
+
   render() {
+    if (auth.getCurrentUser()) {
+      return <Redirect to="/" />;
+    }
     return (
       <div className="login-page ">
         <div className="container  form-signin w-100 m-auto">
-          <form className="text-center">
+          <form onSubmit={this.handleSubmit} className="text-center">
             <h1>Welcome to abuKitchen 👋</h1>
             <div className="form-floating">
-              <input
-                type="email"
-                className="form-control mb-2 rounded"
-                id="floatingInput"
-                placeholder="name@example.com"
-              />
-              <label for="floatingInput">Email address</label>
+              {this.renderInput("username", "Username")}
             </div>
             <div className="form-floating">
-              <input
-                type="password"
-                className="form-control mb-2 rounded"
-                id="floatingPassword"
-                placeholder="Password"
-              />
-              <label for="floatingPassword">Password</label>
+              {this.renderInput("password", "Password")}
             </div>
-            <button className="w-100 btn btn-lg btn-primary" type="submit">
-              Sign in
-            </button>
+            {this.renderButton("Login")}
+
             <a
-              href="/registrar"
+              href="/register"
               style={{
                 display: "flex",
                 marginLeft: "0.1rem",

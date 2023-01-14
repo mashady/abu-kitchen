@@ -2,10 +2,16 @@ import React, { Component } from "react";
 import "../styles/mealBox.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAdd } from "@fortawesome/free-solid-svg-icons";
+import { set } from "lodash";
 export default class mealBox extends Component {
+  state = {
+    cart: [],
+  };
   componentDidMount() {}
+  handleSelectMeal = (meal) => {};
   render() {
     const { featuresItems } = this.props;
+    const clickedMeal = this.state.cart;
     return (
       <section className="meals-box">
         <div className="container">
@@ -17,6 +23,16 @@ export default class mealBox extends Component {
           >
             Feature Meals
           </h3>
+          {!clickedMeal && (
+            <>
+              <div>cart is empty</div>
+            </>
+          )}
+          {clickedMeal && (
+            <>
+              <div>{this.state.cart}</div>
+            </>
+          )}
           <div className="row">
             {featuresItems.map((item) => (
               <div className="col-md-4" key={item._id}>
@@ -31,7 +47,10 @@ export default class mealBox extends Component {
                     <p className="text-truncate">{item.description}</p>
                     <div className="card-footer">
                       <span>{item.price}</span>
-                      <span className="add rounded-circle">
+                      <span
+                        onClick={() => this.handleSelectMeal(item)}
+                        className="add rounded-circle"
+                      >
                         <FontAwesomeIcon
                           style={{
                             color: "#FFF",
